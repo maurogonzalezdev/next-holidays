@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from './location/services/location.service';
+import { Location } from './location/interfaces/location.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,12 @@ import { LocationService } from './location/services/location.service';
 export class AppComponent implements OnInit {
   title = 'Next Holidays';
 
-  constructor(private _locationService: LocationService) {}
+  public locationInfo?: Location;
 
+  constructor(private _locationService: LocationService) {}
   ngOnInit(): void {
-    this._locationService.getLocation().subscribe((data) => console.log(data));
+    this._locationService.getLocation().subscribe((data) => {
+      this.locationInfo = data;
+    });
   }
 }
