@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Location } from '../interfaces/location.interface';
+
 import { Observable } from 'rxjs';
+
+import { Location } from '../interfaces/location.interface';
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
