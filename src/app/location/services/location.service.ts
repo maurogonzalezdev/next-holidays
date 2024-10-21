@@ -1,21 +1,21 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Location } from '../interfaces/location.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
-  private apiUrl: string = 'https://user-ip-data-rest-api.p.rapidapi.com/check';
+  private _apiUrl: string = 'https://user-ip-data-rest-api.p.rapidapi.com/check';
 
-  private _headers: { [k: string]: string } = {
-    'x-rapidapi-key': 'a1fdffe898msh2c5fed9fe66e722p1bc990jsne91faaf35380',
+  private _headers: HttpHeaders = new HttpHeaders({
+    'x-rapidapi-key': '9bf9cb27f4msh9ef6470ae2a8dc0p12076ejsn7c642920d973',
     'x-rapidapi-host': 'user-ip-data-rest-api.p.rapidapi.com',
-  };
+  });
 
   constructor(private _httpClient: HttpClient) {}
 
   public getLocation(): Observable<Location> {
-    return this._httpClient.get<Location>(this.apiUrl, {
+    return this._httpClient.get<Location>(this._apiUrl, {
       headers: this._headers,
     });
   }
