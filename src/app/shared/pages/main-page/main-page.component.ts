@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'shared-main-page-component',
+  selector: 'app-shared-main-page',
   templateUrl: 'main-page.component.html',
 })
 export class MainPageComponent {}
