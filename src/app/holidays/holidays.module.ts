@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HolidaysListComponent } from './components/holidays-list/holidays-list.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HolidaysListComponent
+  ],
   imports: [
     CommonModule
   ]

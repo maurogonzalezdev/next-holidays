@@ -1,4 +1,4 @@
-export interface Location {
+export interface ILocation {
   ip:                string;
   country:           string;
   iso2:              string;
