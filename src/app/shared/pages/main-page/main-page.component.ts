@@ -8,7 +8,7 @@ import { IHoliday } from '../../../holidays/interfaces/holiday.interface';
   templateUrl: 'main-page.component.html',
 })
 export class MainPageComponent {
-  public holidays?: IHoliday[] = [];
+  public holidays: IHoliday[] = [];
 
   constructor(private holidaysService: HolidaysService) {}
 
@@ -19,8 +19,6 @@ export class MainPageComponent {
       .getHolidays(year, countryCode)
       .subscribe((data: IHoliday[]) => {
         this.holidays = data;
-
-        console.log(this.holidays);
       });
   }
 }

@@ -1,1 +1,9 @@
 <p>holidays-list works!</p>
+<div>
+  <ul>
+    <li *ngFor="let holiday of getHolidays">
+      {{holiday.date}}
+      {{holiday.localName}}
+    </li>
+  </ul>
+</div>
