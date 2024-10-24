@@ -1,34 +1,32 @@
-<h2 class="fs-3">
-  Holidays in
-  <strong>Republic of Chile</strong>
-  for
-  <strong>2024</strong>
-</h2>
-<ng-template [ngIf]="loadedHolidays" [ngIfElse]="loadingHolidays">
+<ng-template [ngIf]="getLoadedHolidays" [ngIfElse]="loadingHolidays">
+  <h2 class="fs-1">
+    Holidays in
+    <strong>{{ getCountry.country }}</strong>
+    for
+    <strong>2024</strong>
+  </h2>
   <table class="table table-responsive table-striped table-hover">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Date</th>
-        <th scope="col">Name</th>
-        <th>Type</th>
+        <th scope="col">Local Name</th>
+        <th scope="col">International Name</th>
       </tr>
     </thead>
     <tbody class="table-group-divider">
       <tr scope="row" *ngFor="let holiday of getHolidays; index as i">
         <td>
-          <strong>{{ i + 1 }}</strong>
+          <strong class="fst-italic">{{ i + 1 }}</strong>
         </td>
-        <td>
-          {{ holiday.date | date : "fullDate" }}
+        <td class="text-danger">
+          <strong>{{ holiday.date | date }}</strong>
         </td>
         <td>
           {{ holiday.localName }}
         </td>
         <td>
-          <span *ngFor="let type of holiday.types">
-            {{ type }}
-          </span>
+          {{ holiday.name }}
         </td>
       </tr>
     </tbody>
