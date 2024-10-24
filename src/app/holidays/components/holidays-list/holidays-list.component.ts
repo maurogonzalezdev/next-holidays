@@ -6,7 +6,7 @@ import { IHoliday } from '../../interfaces/holiday.interface';
   templateUrl: './holidays-list.component.html',
   styles: ``,
 })
-export class HolidaysListComponent{
+export class HolidaysListComponent {
   private _holidays: IHoliday[] = [];
 
   @Input()
