@@ -9,10 +9,14 @@ import { IHoliday } from '../../interfaces/holiday.interface';
 export class HolidaysListComponent {
   private _holidays: IHoliday[] = [];
 
+  public loadedHolidays: boolean = false;
+
   @Input()
   set setHolidays(holidays: IHoliday[]) {
-    if (holidays.length > 0) this._holidays = holidays;
-
+    if (holidays.length > 0) {
+      this._holidays = holidays;
+      this.loadedHolidays = !this.loadedHolidays;
+    }
     return;
   }
 
